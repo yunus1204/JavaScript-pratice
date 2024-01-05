@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First</title>
+    <style>
+        .operation {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            /* margin: 20px 30px; */
+        }
+
+        .operation img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Arithmetic Operations</h3>
+    <form>
+        Number 1 :<input type="number" id="num1">
+        Number 2 :<input type="number" id="num2">
+    </form><br>
+    
+    <div class="operation" >
+        <img src="add-icon-symbol-premium-quality-isolated-plus-vector-16202278.jpg" onclick="performOperation('add')" alt="Add" style="margin-left: 20px;">
+        <img src="Minus-PNG-Download-Image.png" onclick="performOperation('sub')" alt="Subtract" style="margin-left: 20px;">
+        <img src="pngtree-vector-multiply-icon-png-image_956429.jpg" onclick="performOperation('mul')" alt="Multiply" style="margin-left: 20px;">
+        <img src="png-clipart-obelus-division-mathematics-symbol-computer-icons-mathematics-rectangle-black.png" onclick="performOperation('div')" alt="Divide" style="margin-left: 20px;">
+        <img src="3068764.png" onclick="performOperation('modulo')" alt="Modulo">
+    </div>
+    
+    <p id="value">The Final Value :</p>
+
+    <script>
+        function performOperation(operation) {
+            var x = parseFloat(document.getElementById("num1").value);
+            var y = parseFloat(document.getElementById("num2").value);
+            var result;
+
+            switch (operation) {
+                case 'add':
+                    result = x + y;
+                    break;
+                case 'sub':
+                    result = x - y;
+                    break;
+                case 'mul':
+                    result = x * y;
+                    break;
+                case 'div':
+                    result = x / y;
+                    break;
+                case 'modulo':
+                    result = x % y;
+                    break;
+                default:
+                    result = 'Invalid operation';
+            }
+
+            document.getElementById("value").innerHTML = "The Final Value: " + result;
+        }
+    </script>
+</body>
+</html>
